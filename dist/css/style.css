@@ -1,0 +1,19 @@
+body{
+	padding: 0;
+	margin-bottom: 0;
+}
+header{
+	background-color: #717A8B;
+	box-shadow: 2px 2px #000;
+	overflow: hidden;
+	display: block;
+}
+#logo{
+	float: left;
+}
+nav{
+	float: right;
+}
+nav ul li{
+	
+}

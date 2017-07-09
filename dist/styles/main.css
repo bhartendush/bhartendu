@@ -1,16 +1,21 @@
 body {
-  font-family: 'Roboto', sans-serif;
-  background: #4C5366;
-  padding: 0;
+  background: #4c5366;
+  font-family: "Roboto", sans-serif;
   margin: 0;
+  padding: 0;
+}
+
+.pink {
+  color: #fe763c;
 }
 
 header {
   background-color: #71788b;
-  overflow: hidden;
   box-shadow: 2px 2px 30px #000;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
   z-index: 1;
-  position: relative;
 }
 
 h1, h2, h3, h4 {
@@ -118,18 +123,27 @@ nav ul li a {
 }
 
 #techn-lst {
-  width: 65%;
-  margin: 0 auto;
+  margin-top: 50px;
 }
 #techn-lst .techn-lst-in {
   width: 45%;
   display: inline-block;
+  margin-left: 50px;
 }
-#techn-lst .techn-lst-in .techn-nm, #techn-lst .techn-lst-in .techn-bar {
+#techn-lst .techn-lst-in .techn-nm {
   color: #fff;
   font-size: 1.5vw;
   font-weight: 300;
   display: inline-block;
+}
+#techn-lst .techn-lst-in .techn-bar {
+  height: 20px;
+  position: relative;
+  margin: 5px 0 50px 0;
+  background: #555;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
 }
 #techn-lst .techn-lst-in .techn-bar span {
   display: block;
@@ -146,7 +160,7 @@ nav ul li a {
   -moz-border-radius-bottomleft: 20px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  background-color: yellow;
+  background-color: #fe763c;
   position: relative;
   overflow: hidden;
 }
@@ -176,15 +190,17 @@ nav ul li a {
 }
 #portfolio #portf-btn {
   text-transform: uppercase;
-  color: #fff;
   padding: 10px 50px;
   border: #fe763c solid 1px;
-  text-decoration: none;
   text-align: center;
-  display: inline-block;
   width: 30%;
   margin: 0 auto;
+  margin-top: 50px;
   letter-spacing: 7px;
+}
+#portfolio #portf-btn a {
+  text-decoration: none;
+  color: #fff;
 }
 
 #process {
@@ -200,7 +216,7 @@ nav ul li a {
 #process ul:before {
   content: " ";
   top: 0;
-  bottom: 225px;
+  bottom: 218px;
   position: absolute;
   width: 3px;
   background-color: #fe763c;
@@ -250,7 +266,6 @@ nav ul li a {
 #process .prc-cnt p {
   color: rgba(196, 203, 222, 0.78);
   font-weight: 100;
-  text-transform: uppercase;
   font-size: 1.0vw;
   letter-spacing: 1.2px;
   margin-top: 8px;

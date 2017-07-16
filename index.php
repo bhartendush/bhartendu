@@ -1,3 +1,70 @@
+<?php
+if(!isset($_POST['submit']))
+{
+	//This page should not be accessed directly. Need to submit the form.
+	echo "error; you need to submit the form!";
+}
+$name = $_POST['name'];
+$visitor_email = $_POST['email'];
+$service = $_POST['service'];
+$budget = $_POST['budget'];
+$message = $_POST['message'];
+
+//Validate first
+if(empty($name)||empty($visitor_email)) 
+{
+    echo "Name and email are mandatory!";
+    exit;
+}
+
+if(IsInjected($visitor_email))
+{
+    echo "Bad email value!";
+    exit;
+}
+
+$email_from = 'bhartendu7285@gmail.com';//<== update the email address
+$email_subject = "Project Details";
+$email_body = "You have received a new message from the user $name.\n".
+              "Email: $visitor_email.\n".
+              "Service: $service.\n".
+              "BUdget: $budget.\n".
+    "Here is the message:\n $message".
+    
+$to = "bhartendu7285@gmail.com";//<== update the email address
+$headers = "From: $email_from \r\n";
+$headers .= "Reply-To: $visitor_email \r\n";
+//Send the email!
+mail($to,$email_subject,$email_body,$headers);
+//done. redirect to thank-you page.
+header('Location: index.html');
+
+
+// Function to validate against any email injection attempts
+function IsInjected($str)
+{
+  $injections = array('(\n+)',
+              '(\r+)',
+              '(\t+)',
+              '(%0A+)',
+              '(%0D+)',
+              '(%08+)',
+              '(%09+)'
+              );
+  $inject = join('|', $injections);
+  $inject = "/$inject/i";
+  if(preg_match($inject,$str))
+    {
+    return true;
+  }
+  else
+    {
+    return false;
+  }
+}
+   
+?> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -179,9 +246,9 @@
    <div class="cont-lt">
 	 <h4>Contact</h4>
 	 <p>Ph No: +91-835-102-5668 </p>
-	 <a href="mailto:sales@bhartendu.me">sales@bhartendu.me</a>
+	 <p>sales@bhartendu.me</p>
 	</div>
-   <!-- <div class="cont-rt">
+   <div class="cont-rt">
 	   <form method="POST" name="myform" action="form.php">
 	   	  <input type="text" name="name" placeholder="Name" />
 	   	  <input type="email" name="email" placeholder="Email" />
@@ -201,7 +268,7 @@
 	   	  <textarea name="message" placeholder="Message"></textarea>
 	   	  <input type="submit" name="" value="Submit" />
 	   </form>
-	</div>  -->
+	</div>
 	</div>
   </div>
 </section>
@@ -210,7 +277,14 @@
 	<copy>&copy; 2017 bhartendu.me</copy>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="src/scripts/gen_validatorv31.js" ></script>
 <script type="text/javascript" src="src/scripts/script.js" ></script>
+<script type="text/javascript">
+var frmvalidator  = new Validator("myform");
+frmvalidator.addValidation("name","req","Please provide your name"); 
+frmvalidator.addValidation("email","req","Please provide your email"); 
+frmvalidator.addValidation("email","email","Please enter a valid email address");
+</script>
 
 <!-- Google analytics  -->
 <script>

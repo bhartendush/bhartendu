@@ -182,21 +182,21 @@
 	 <p>sales@bhartendu.me</p>
 	</div>
    <div class="cont-rt">
-	   <form method="POST" action="">
-	   	  <input type="text" name="" placeholder="Name" />
-	   	  <input type="email" name="" placeholder="Email" />
-	   	  <select>
-	   	  	<option>Websdesign</option>
-	   	  	<option>Website development</option>
-	   	  	<option>Wordpress Development</option>
-	   	  	<option>Nodejs Development</option>
+	   <form method="POST" name="myform" action="form.php">
+	   	  <input type="text" name="name" placeholder="Name" />
+	   	  <input type="email" name="email" placeholder="Email" />
+	   	  <select name="service">
+	   	  	<option value="webdesign">Websdesign</option>
+	   	  	<option value="websitedevelopment">Website development</option>
+	   	  	<option value="wordpressdevelopment">Wordpress Development</option>
+	   	  	<option value="nodejs">Nodejs Development</option>
 	   	  </select>
-	   	  <select>
-	   	  	<option>Less than $500</option>
-	   	  	<option>$500 - $1000</option>
-	   	  	<option>$1000 - $2000</option>
-	   	  	<option>$2000 - $3000</option>
-	   	  	<option>Above $3000</option>
+	   	  <select name="budget">
+	   	  	<option value="$500">Less than $500</option>
+	   	  	<option value="$500-$1000">$500 - $1000</option>
+	   	  	<option value="$1000-$2000">$1000 - $2000</option>
+	   	  	<option value="$2000-$3000">$2000 - $3000</option>
+	   	  	<option value="above $3000">Above $3000</option>
 	   	  </select>
 	   	  <textarea name="message" placeholder="Message"></textarea>
 	   	  <input type="submit" name="" value="Submit" />
@@ -210,8 +210,14 @@
 	<copy>&copy; 2017 bhartendu.me</copy>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="src/scripts/gen_validatorv31.js" ></script>
 <script type="text/javascript" src="src/scripts/script.js" ></script>
-
+<script type="text/javascript">
+var frmvalidator  = new Validator("myform");
+frmvalidator.addValidation("name","req","Please provide your name"); 
+frmvalidator.addValidation("email","req","Please provide your email"); 
+frmvalidator.addValidation("email","email","Please enter a valid email address");
+</script>
 
 <!-- Google analytics  -->
 <script>

@@ -25,6 +25,7 @@
     "jshint": "^2.9.4"
   },
   "dependencies": {
+    "gulp-ruby-sass": "^2.1.1",
     "sass-lint": "^1.10.2"
   }
 }

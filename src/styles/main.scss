@@ -132,7 +132,7 @@ nav {
 
 
 	 h3 {
-		 font-family: 'Roboto', sans-serif;
+		 font-family: $primary-font;
 	     color: #6f7a8a;
 	     font-size: 2.5vw;
 	     text-transform: uppercase;
@@ -316,6 +316,37 @@ nav {
 	    }
         }    	  
 }
+
+#clients{
+			background-color: #2e3548 - 10;
+			padding: 100px 0 200px;			
+	  h2{
+		   @extend .h2-tit;		   
+		  span{
+		     @extend .font-bold;
+		   }
+	    }
+	 h3{
+	  font-size:1.8vw;
+	  text-align:center;
+	  color:rgba(196,203,222,.5);
+	  margin-top:0;
+	  @extend .font-thin;
+	}	  
+
+#clients-ot{
+            margin-top:5%;
+	        display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-items: center;
+			justify-content: space-around;
+          img{
+            width:75%;
+          }
+        }
+	   
+}
 #contact{
          background-image:url(../images/contact.jpg);
          background-size:cover;
@@ -325,11 +356,16 @@ nav {
 	   background-color:#2e3548;
 	   width:65%;
 	   position:absolute;
-	   margin-top:-190px;
+	   margin-top:-90px;
 	   padding:80px 100px;
 	.cont-lt{
 			 @extend .left;
-			 width:37%;
+			 width:100%;
+			 text-align:center;
+			a{
+			 color: rgba(196,203,222,.78);
+			 text-decoration:none;
+			 }
       h4{
          font-size:2.0vw;
          color:#939dab;

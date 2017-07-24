@@ -361,7 +361,7 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
-footer copy {
+footer .copy {
   color: rgba(196, 203, 222, 0.48);
   font-size: 1vw;
 }

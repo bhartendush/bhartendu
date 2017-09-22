@@ -1,3 +1,6 @@
+
+
+
 $primary-color: #4c5366;
 $pink: #fe763c;
 $primary-font: 'Roboto', sans-serif;
@@ -9,9 +12,10 @@ body {
 	padding: 0;
 }
 
-.pink{
-	color: $pink; 
+.pink {
+	  color: $pink;
 }
+
 header {
 	background-color: ($primary-color) + 37;
 	box-shadow: 2px 2px 30px #000;
@@ -20,9 +24,14 @@ header {
     width:100%;
 	z-index: 1;
 }
-h1,h2, h3, h4{
-	margin:0;
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
 }
+
 .font-thin {
 	font-weight: 100;
 }
@@ -49,17 +58,18 @@ h1,h2, h3, h4{
 
 .h2-tit {
       @extend .font-thin;
-      text-transform: uppercase;
-	  color:#fff;
-	  font-size: 4.0vw;
-	  text-align: center;
+  color:#fff;
+  font-size: 4.0vw;
+	text-align: center;
+	text-transform: uppercase;
+	
 }
 
 #logo {
 	@extend .left;
-	img{
+	img {
+		height: auto;
 	  width: 50px;
-	  height: auto;
 	}
 }
 
@@ -82,10 +92,10 @@ nav {
 	}
 }
 
-#hero {
-     position: relative;
-	 background-color: $primary-color + 36;
-	 padding: 90px 0 250px;
+.hero {
+	background-color: $primary-color + 36;
+  padding: 90px 0 250px;
+	position: relative;
 
    h1 {
     @extend .font-thin;  
@@ -418,3 +428,4 @@ footer{
   }  
 }
 
+@import 'media.scss';

@@ -18,11 +18,14 @@ header {
   z-index: 1;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
 }
 
-.font-thin, .h2-tit, #professional #prof-ot h2, #portfolio h2, #process h2, #clients h2, #hero h1, #hero h2, #professional #prof-top-bx h3, #portfolio h3, #clients h3 {
+.font-thin, .h2-tit, #professional #prof-ot h2, #portfolio h2, #process h2, #clients h2, .hero h1, .hero h2, #professional #prof-top-bx h3, #portfolio h3, #clients h3 {
   font-weight: 100;
 }
 
@@ -42,20 +45,20 @@ h1, h2, h3, h4 {
   float: left;
 }
 
-.uppercase, #hero h1, #hero h2 {
+.uppercase, .hero h1, .hero h2 {
   text-transform: uppercase;
 }
 
 .h2-tit, #professional #prof-ot h2, #portfolio h2, #process h2, #clients h2 {
-  text-transform: uppercase;
   color: #fff;
   font-size: 4.0vw;
   text-align: center;
+  text-transform: uppercase;
 }
 
 #logo img {
-  width: 50px;
   height: auto;
+  width: 50px;
 }
 
 nav ul li {
@@ -69,23 +72,23 @@ nav ul li a {
   font-size: 1.1vw;
 }
 
-#hero {
-  position: relative;
+.hero {
   background-color: #70778a;
   padding: 90px 0 250px;
+  position: relative;
 }
-#hero h1 {
+.hero h1 {
   font-size: 2.9vw;
   color: #fff;
   width: 55%;
   margin-top: 0;
 }
-#hero h2 {
+.hero h2 {
   font-size: 6.9vw;
   color: #fff;
   margin: 0;
 }
-#hero img {
+.hero img {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -364,4 +367,36 @@ footer {
 footer .copy {
   color: rgba(196, 203, 222, 0.48);
   font-size: 1vw;
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  .hero img {
+    top: 83px;
+    width: 100px;
+  }
+
+  #contact .contc-ot {
+    padding: 80px 69px;
+  }
+
+  #clients-ot a {
+    display: block;
+  }
+
+  #techn-lst .techn-lst-in .techn-bar {
+    height: 5px;
+    padding: 7px;
+  }
+  #techn-lst .techn-lst-in .techn-nm {
+    font-size: 12px;
+  }
+
+  #professional #prof-top-bx {
+    padding: 80px 69px;
+  }
 }

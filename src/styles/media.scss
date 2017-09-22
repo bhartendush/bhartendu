@@ -1,0 +1,46 @@
+/* Portrait and Landscape */
+@media only screen
+and (min-width: 320px)
+and (max-width: 480px) {
+  .container {
+    width: 100%;
+    }
+
+  .hero {
+    img {
+      top: 83px;
+      width: 100px;
+  }
+ }
+
+ #contact {
+    .contc-ot {
+      padding: 80px 69px;
+     }
+ }
+
+ #clients-ot {
+    a {
+      display: block;
+     }
+ }
+
+#techn-lst {
+    .techn-lst-in {
+      .techn-bar {
+        height: 5px;
+        padding: 7px;
+ }
+
+      .techn-nm {
+        font-size: 12px;
+ }
+    }
+}
+
+#professional {
+    #prof-top-bx {
+        padding: 80px 69px;
+    }
+}
+}

@@ -181,12 +181,13 @@ nav ul li a {
   margin-top: 0;
 }
 #portfolio #port-ot {
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
+  margin-top: 40px;
 }
 #portfolio #port-ot a {
   display: inline-block;
-  width: 30%;
+  width: 33.12%;
 }
 #portfolio #port-ot a img {
   width: 100%;
